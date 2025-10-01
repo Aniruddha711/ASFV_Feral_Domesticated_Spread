@@ -7,9 +7,46 @@
 # Spatial_ASFV_Spread
 
 ### 1. Define the core parameters  
-(e.g., `beta`, `epsilon`, `xi`, `kappa`, mortality rates, etc.)
+xi_1 = 0.98
+xi_2 = 0.01
+eta_1 = 0.98
+eta_2 = 0.01
+Q_j = 25
+Q_i = 5e6
+Q_in = 5e6
+epsilon_1 = 0.08
+epsilon_2 = 0.7
+Q_shed = 1000
+V_b = 1e3
+V_b_shed = 1e3
+C_hum = 0.1
+ninfected = 1
+NN = 1e-9
+p = 0.04
+MortalityH = 1
+T = 175
+kappa_1 = 0.4
+kappa_2 = 0.25
+kappa_3 = 0.4
+kappa_4=0.25 #Between pixel transmission
+zeta_1 = 0.9
 
----
+'''
+# --- Feral ↔ Barn coupling params ---
+beta_fp = 0.0015     # feral → farm pigs (via pixel env) per day per load unit
+beta_pf = 0.1     # farm/barn → feral (via pixel env) per day per load unit
+kappa_fp = 0.5     # reachability of pixel viral load to farm pigs
+kappa_pf = 0.5     # reachability to feral pigs
+K_V = 1e3          # scaling for viral load
+
+eta_f = 0.8        # fraction of feral shedding that enters pixel environment
+Q_f_shed = 1e3     # feral infected shedding per day (same units as your env load)
+epsilon_pix = 0.15 # daily pixel-level decay/cleaning for env viral load
+
+# Feral progression (simple SEIR)
+sigma_EI = 1/4.0   # E→I per day (mean incubation ~4d)
+gamma_IR = 1/30.0   # I→R per day (mean infectious ~7d)
+'''
 
 ## Class: `Pen`
 
