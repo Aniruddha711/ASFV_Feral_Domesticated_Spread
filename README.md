@@ -177,7 +177,6 @@ Sources of contamination:
 ### Viral Decay
 
 - Environmental decay reduces persistence.
-- Adjustable based on temperature / soil / vegetation.
 
 ### Integration
 
@@ -191,8 +190,7 @@ In addition to airborne and wildlife-driven spread, the model includes **vehicle
 - Upon arriving at the next farm, it may **deposit trace viral material**, contributing to that farm’s exposure pressure.
 - The strength of this indirect transmission depends on:
   - **Farm infection status at the time of visit**
-  - **Time elapsed between stops (natural decay)**
-  - **Whether the truck was sanitized between visits**  
+  - **Natural decay**
 
 <img width="1544" height="2024" alt="TruckNetwork" src="https://github.com/user-attachments/assets/100ca14d-73ef-42f8-8629-008a430988a2" />
 
