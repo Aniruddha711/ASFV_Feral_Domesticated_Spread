@@ -47,6 +47,34 @@ epsilon_pix = 0.15 # daily pixel-level decay/cleaning for env viral load
 sigma_EI = 1/4.0   # E→I per day (mean incubation ~4d)
 gamma_IR = 1/30.0   # I→R per day (mean infectious ~7d)
 '''
+## Transmission Routes and Model Overview
+
+We develop a comprehensive multi-level modeling framework to investigate the transmission dynamics of African Swine Fever Virus (ASFV) across commercial swine farms in North Carolina. At the farm level, the model simulates viral dissemination across pens, rooms, and barns by incorporating **ten distinct transmission routes** that capture both direct and indirect interactions among pigs. Environmental viral load released by infected rooms is tracked and contributes to spillover risk in neighboring, previously unaffected rooms.
+
+To extend transmission beyond individual farms, we incorporate a **spatially explicit grid system (1 km × 1 km resolution)**. Infected farm units elevate environmental contamination in adjacent cells, creating **ripple effects of infection across the landscape**. 
+
+The framework also integrates **human-mediated transmission**, including virus introduction by farm workers, contaminated trucks, feed transport, and pig movements. To further enhance realism, **feral pig movement** is modeled using habitat-dependent probability functions. Feral pigs stochastically migrate between pixels, shedding viral material into the environment. Their decisions are governed by a Bernoulli process based on habitat suitability, and the viral load in each pixel is dynamically updated over time.
+
+Grounded in **real U.S. farm data**—including barn capacity, pen configurations, and empirically derived viral transfer dynamics—this model provides a practical simulation of ASFV spread under field conditions and enables risk-based intervention testing.
+
+### ASFV Transmission Routes Captured in the Model
+
+| Category                | Route Description |
+|-------------------------|------------------|
+| **Within-Pen**          | Direct pig-to-pig contact (clinical/subclinical shedders) |
+| **Within-Pen (Indirect)** | Fecal / oro-nasal environmental exposure |
+| **Between-Pens (Same Room)** | Airborne drift or runoff-based spread |
+| **Between-Rooms (Same Barn)** | Ventilation-mediated or movement-assisted spread |
+| **Environmental Spillover (Within Barn)** | Viral load released into shared barn atmosphere |
+| **Worker-Mediated**     | Farm staff movement between rooms/barns |
+| **Truck-Mediated**      | Contamination carried by feed, livestock or service vehicles |
+| **Feed / Equipment Transfer** | Cross-contamination via shared tools/materials |
+| **Pig Movement (Between Farms)** | Introduction of infected animals |
+| **Feral Pig Interface** | Spillover between wild boar and domestic barns |
+
+---
+<img width="6328" height="4700" alt="Complet7Routes" src="https://github.com/user-attachments/assets/82bf5036-97fc-4514-b8db-0527566bbd07" />
+
 
 ## Class: `Pen`
 
