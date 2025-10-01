@@ -1,74 +1,116 @@
 # ASFV_Feral_Domesticated_Spread
-We model ASFV spread within and between farms by combining barn-level viral transmission with a spatial grid that includes environmental contamination, vehicle spread, and feral pig movement to identify high-risk areas and guide biosecurity strategies.
+
+We model ASFV spread as a **layered system** that couples **within-farm infection dynamics** with **between-farm spatial dissemination**. Viral transmission occurs not only through **direct pig contact**, but also via **environmental contamination, vehicle-mediated transfer, and feral pig movement across the landscape**. By embedding barn-level epidemiological processes within a **spatial grid**, we capture how **local outbreaks escalate into broader regional spread**, enabling the identification of **high-risk transmission corridors** and evaluation of **targeted biosecurity strategies**.
+
+---
+
 # Spatial_ASFV_Spread
-#1: Define the parameters. (beta, epsilon, xi, kappa, mortality etc.)
-Class Pen
-#1: We define a class ‘Pen’ to create and distribute pigs based on status.
-#2: We keep track of the first day pigs changed status.
-Pen class is the lowest unit of my hierarchy:
-Pixel level → Room level → Barn level → Pen level → this class
-It models disease spread among pigs in a single pen:
-1.	Tracks how many pigs are in each compartment (S, E, Clinical, Subclinical, Carrier, Detected, Dead).
-2.	 Tracks spatial location in barn layout.
-3.	 Tracks environmental viral loads (fecal, airborne).
-4.	Logs daily state for time series analysis.
-Class Barn
-#1: We define the configurations of the barn (pens, barns, initial infected, size of each pen, viral retention factor and viral dispersal factors within the room, neighbor pixel for dispersal)
-• Models a single barn with multiple rooms and pens.
-• Simulates disease spread among pigs at barn-level.
-• Tracks viral load movement within and between rooms.
-• Creates all pens in the barn, with spatial layout and infection seeding.
-• Tracks room-level viral loads over time.
-• Models retention (viral load staying in a room) and dispersion (spreading to other rooms).
-• Uses an interaction matrix to define between-room environmental spread.
-• Updates infection pressure in each room to drive new exposures.
-• Collects Susceptible → Exposed transitions for analysis.
-• Supports spatial mapping to pixels on a farm grid (for higher-level spread modeling).
 
-**Class Pixel**
-• Pixel class models grid cells of the farm.
-•	Holds Pixel ID, grid location (row, column).
-•	Contains list of rooms in that pixel.
-•	Tracks neighboring pixels for spread modeling.
-• Loads pixels.csv to build:
-•	Pixel objects with room assignments.
-•	Neighbor relationships between pixels.
-• Builds neighbor_dict:
-•	Maps each pixel to its neighbors for cross-pixel spread.
-• Creates room_pixel_mapping:
-•	Maps each room’s CSV file to its Pixel ID.
-•	Supports assigning pixel_id to Pen objects in Barn.
-• Enables multi-level spatial modeling:
-•	Within-pen spread.
-•	Between-pens in a room.
-•	Between-rooms in a barn.
-•	Between-pixels on the farm grid.
-• Supports dispersal rules like:
-•	100% of viral load stays in the same pixel.
-•	80% spreads to immediate neighbors.
-•	60% to neighbors-of-neighbors.
+### 1. Define the core parameters  
+(e.g., `beta`, `epsilon`, `xi`, `kappa`, mortality rates, etc.)
 
-**Wild-Pigs Transmission**
-Model Overview
-Spatially explicit model tracking African swine fever virus (ASFV) transmission from wild (feral) pigs to commercial swine barns.
-A single herd of feral pigs moves stochastically between neighboring pixels.
-**Pig Movement**
-Movement is probabilistic and depends on habitat suitability.
-Herds either stay in the same pixel or relocate to a neighbor pixel based on a threshold decision.
-Higher habitat suitability → greater chance of staying.
-**Viral Load Accumulation**
-Viral load is tracked at the pixel level.
-When the herd relocates, viral load shifts from the source pixel to the destination pixel, where the herd continues to shed.
-Viral load is also contributed by infected farm pigs within the same pixel.
-**Accumulation includes:**
-Shedding from pens/rooms within barns
-Cross-room and intra-pixel dispersal
-Inter-pixel contamination from neighboring pixels
-Feral pig contributions
-**Viral Decay**
-Viral particles in the environment decay over time, reducing persistence.
-Decay rate can be adjusted to reflect environmental conditions (temperature, soil, vegetation, etc.).
-**Integration with Disease Model**
-Total viral load at each pixel = farms + feral pigs.
-This combined load determines exposure risk for domestic pigs in commercial barns.
+---
+
+## Class: `Pen`
+
+Lowest unit in the hierarchy:
+
+> **Pixel → Room → Barn → Pen**
+
+Features:
+
+- Creates and distributes pigs by infection status.
+- Tracks first day of status transition.
+- Maintains compartment counts: `S`, `E`, `Clinical`, `Subclinical`, `Carrier`, `Detected`, `Dead`.
+- Stores spatial location within barn layout.
+- Tracks environmental viral loads (fecal, airborne).
+- Logs daily time-series data.
+
+---
+
+## Class: `Barn`
+
+Configurable properties:
+
+- Defines rooms, pens, initial infections, pen sizes.
+- Includes viral retention and dispersal factors within rooms.
+- Maps to neighboring pixels for higher-level spread.
+
+Responsibilities:
+
+- Simulates within-barn disease spread.
+- Tracks viral transfer between rooms.
+- Builds full pen layout and seeds infections.
+- Models environmental retention and dispersal.
+- Uses interaction matrix for cross-room contamination.
+- Computes exposure pressure across rooms.
+- Collects Susceptible → Exposed events.
+- Supports mapping to spatial grid.
+
+---
+
+## Class: `Pixel`
+
+Represents grid cells in the farm-level spatial layer.
+
+- Identified by `(row, column)` coordinates.
+- Contains list of rooms within that pixel.
+- Tracks neighbors for cross-pixel spread.
+
+Data loading:
+
+- Loads `pixels.csv` → builds pixel objects + adjacency.
+- Generates `neighbor_dict` for spatial connectivity.
+- Generates `room_pixel_mapping` for linking rooms to pixels.
+
+Supports hierarchical spread modeling:
+
+- Within-pen  
+- Between-pen (room)  
+- Between-room (barn)  
+- Between-pixel (landscape)
+
+Dispersal rules:
+
+| Path           | Retention |
+|---------------|-----------|
+| Same pixel    | 100%      |
+| Direct neighbor | 80%     |
+| Secondary neighbor | 60% |
+
+---
+
+# Wild-Pig Transmission Layer
+
+### Model Overview
+
+Spatially explicit transmission model linking **wild pig herds** with **domestic barns**.
+
+### Movement
+
+- A feral pig herd moves stochastically between pixels.
+- Movement is habitat-suitability dependent.
+- Higher suitability → higher chance of staying.
+
+### Viral Load Dynamics
+
+- Viral load stored at pixel level.
+- Movement shifts viral load between pixels.
+- Farms also contribute to pixel viral load.
+
+Sources of contamination:
+
+- Pen/room shedding  
+- Cross-room dispersal  
+- Pixel-to-pixel contamination  
+- Feral pig contributions
+
+### Viral Decay
+
+- Environmental decay reduces persistence.
+- Adjustable based on temperature / soil / vegetation.
+
+### Integration
+
+Total viral load at pixel:
 
