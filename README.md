@@ -149,5 +149,20 @@ Sources of contamination:
 
 ### Integration
 
-Total viral load at pixel:
+Total viral load at pixel:farms + feral pigs
+# Truck Network Transmission Layer
+
+In addition to airborne and wildlife-driven spread, the model includes **vehicle-mediated transmission**, where livestock, feed, service, or rendering trucks act as **mechanical carriers** of virus between farms.
+
+- Each truck follows a **travel route** visiting multiple farms over time.
+- If a farm is infected during a visit, the vehicle may **pick up contamination**.
+- Upon arriving at the next farm, it may **deposit trace viral material**, contributing to that farm’s exposure pressure.
+- The strength of this indirect transmission depends on:
+  - **Farm infection status at the time of visit**
+  - **Time elapsed between stops (natural decay)**
+  - **Whether the truck was sanitized between visits**  <img width="21586" height="15204" alt="SchematicDetection" src="https://github.com/user-attachments/assets/d28b2da1-e517-4c75-9f93-9d58e87e06f9" />
+
+
+---
+
 
