@@ -106,6 +106,7 @@ Supports hierarchical spread modeling:
 - Between-pen (room)  
 - Between-room (barn)  
 - Between-pixel (landscape)
+![barn_infectionpng](https://github.com/user-attachments/assets/82e0ae51-d95d-4df0-8c8e-485499df498e)
 
 Dispersal rules:
 
@@ -160,7 +161,7 @@ In addition to airborne and wildlife-driven spread, the model includes **vehicle
 - The strength of this indirect transmission depends on:
   - **Farm infection status at the time of visit**
   - **Time elapsed between stops (natural decay)**
-  - **Whether the truck was sanitized between visits**  <img width="21586" height="15204" alt="SchematicDetection" src="https://github.com/user-attachments/assets/d28b2da1-e517-4c75-9f93-9d58e87e06f9" />
+  - **Whether the truck was sanitized between visits**  
 
 
 ---
