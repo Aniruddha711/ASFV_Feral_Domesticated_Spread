@@ -68,11 +68,11 @@ Grounded in **real U.S. farm data**—including barn capacity, pen configuration
 | **Environmental Spillover (Within Barn)** | Viral load released into shared barn atmosphere |
 | **Worker-Mediated**     | Farm staff movement between rooms/barns |
 | **Truck-Mediated**      | Contamination carried by feed, livestock or service vehicles |
-| **Feed / Equipment Transfer** | Cross-contamination via shared tools/materials |
 | **Pig Movement (Between Farms)** | Introduction of infected animals |
 | **Feral Pig Interface** | Spillover between wild boar and domestic barns |
 
 ---
+We present a schematic about the multiple routes for ASFV spread.
 <img width="6328" height="4700" alt="Complet7Routes" src="https://github.com/user-attachments/assets/82bf5036-97fc-4514-b8db-0527566bbd07" />
 
 
@@ -81,6 +81,7 @@ Grounded in **real U.S. farm data**—including barn capacity, pen configuration
 Lowest unit in the hierarchy:
 
 > **Pixel → Room → Barn → Pen**
+<img width="8315" height="13984" alt="SpatialSchematic" src="https://github.com/user-attachments/assets/1bf877a6-03e8-4cd0-937c-c055919a93be" />
 
 Features:
 
@@ -134,8 +135,10 @@ Supports hierarchical spread modeling:
 - Between-pen (room)  
 - Between-room (barn)  
 - Between-pixel (landscape)
+  
 ![barn_infectionpng](https://github.com/user-attachments/assets/82e0ae51-d95d-4df0-8c8e-485499df498e)
-
+Average viral loads generated through fecal transmission (top panel) and aerosol transmission (bottom panel) across 24 pens over periods of (A, D) 5, (B, E) 10, and (C,
+F) 30 days.
 Dispersal rules:
 
 | Path           | Retention |
@@ -191,6 +194,7 @@ In addition to airborne and wildlife-driven spread, the model includes **vehicle
   - **Time elapsed between stops (natural decay)**
   - **Whether the truck was sanitized between visits**  
 
+<img width="1544" height="2024" alt="TruckNetwork" src="https://github.com/user-attachments/assets/100ca14d-73ef-42f8-8629-008a430988a2" />
 
 ---
 
