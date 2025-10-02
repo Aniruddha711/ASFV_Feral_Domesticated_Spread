@@ -105,8 +105,12 @@ Grounded in **real U.S. farm data**—including barn capacity, pen configuration
 
 ---
 We present a schematic about the multiple routes for ASFV spread.
+<p align="center">
+  <img width="800" alt="CompleteRoutes" src="https://github.com/user-attachments/assets/598d67f8-0d8e-445c-bdd1-276669cfd075" />
+</p>
 
-<img width="3505" height="2036" alt="CompleteRoutes" src="https://github.com/user-attachments/assets/598d67f8-0d8e-445c-bdd1-276669cfd075" />
+**Figure X.** We illustrate the seven transmission routes: direct nose-to-nose contact within pens, within-pen fecal transmission, within-pen aerosol transmission, between-pen direct nose-to-nose contact, between-pen fecal transmission, between-pen airborne transmission, and human transmission.
+
 
 
 
