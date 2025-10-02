@@ -4,7 +4,7 @@
 
 ---
 
-# Spatial_ASFV_Spread
+# Spatial ASFV spread
 
 ### 1. Define the core parameters  
 ## Model Parameters
