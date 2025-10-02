@@ -7,29 +7,49 @@
 # Spatial_ASFV_Spread
 
 ### 1. Define the core parameters  
-xi_1 = 0.98
-xi_2 = 0.01
-eta_1 = 0.98
-eta_2 = 0.01
-Q_j = 25
-Q_i = 5e6
-Q_in = 5e6
-epsilon_1 = 0.08
-epsilon_2 = 0.7
-Q_shed = 1000
-V_b = 1e3
-V_b_shed = 1e3
-C_hum = 0.1
-ninfected = 1
-NN = 1e-9
-p = 0.04
-MortalityH = 1
-T = 175
-kappa_1 = 0.4
-kappa_2 = 0.25
-kappa_3 = 0.4
-kappa_4=0.25 #Between pixel transmission
-zeta_1 = 0.9
+## Model Parameters
+
+| Parameter   | Meaning | Value |
+|-------------|---------|-------|
+| $\beta_{wp}$  | Within-pen direct transmission rate | min = 1.57, mod = 2.79, max = 4.95 |
+| $\beta_{bp}$  | Between-pen direct transmission rate | min = 0.15, mod = 0.28, max = 0.5 |
+| $\omega_v$ | Particles shed in faeces post-infection | min = $10^4$, max = $4.96 \times 10^{6}$/g |
+| $V_{shed}$ | Particles spread through aerosol | min = $10^{2}$, max = $10^{3.2}TCID_{50}eq./m^3$ |
+| $V_{area}$ | Dimension of pen | 25.85 m³ |
+| $\beta_{fp}$ | Fecal transmission rate within and between pen | $10^{-2}$ |
+| $\beta_{ap}$ | Aerosol transmission rate | min = $6 \times 10^{-3}$, mod = $6 \times 10^{-2}$, max = $9 \times 10^{-2}$ |
+| $\epsilon_1$ | Rate at which the virus decays | 0.08 |
+| $\epsilon_2$ | Fecal removal per g per day (Fraction) | 0.7 |
+| $Q_i$ | Fecal ingestion rate by finisher pigs | 25 g/day |
+| $Q_{shed}$ | Average feces shed by a finisher pig | 1000 g/day |
+| $C_{\beta}$ | Human transmission rate | 0.01 |
+| $1/\theta$ | Length of latency period (days) | 4.501 (95% P.I., 2.417–7.223) |
+| $1/\gamma$ | Recovery duration (days) | 44.06 (95% P.I., 33.23–56.394) |
+| $1/\mu_s$ | Average mortality rate of Susceptible (S) | 0.002 |
+| $1/\mu_e$ | Average mortality rate of Exposed (E) | 0.002 |
+| $1/\mu_c$ | Average mortality rate of Clinical (C) | 0.12 |
+| $1/\mu_{sc}$ | Average mortality rate of Sub-Clinical ($S_c$) | 0.06 |
+| $1/\mu_{cc}$ | Average mortality rate of Chronic-Carrier ($C_c$) | 0.002 |
+| $1/\mu_d$ | Average mortality rate of Detected (D) | 0.06 |
+| $\kappa_1$ | Transition rate from Clinical (C) → Sub-Clinical ($S_c$) | 0–0.01 |
+| $\kappa_2$ | Transition rate from Sub-Clinical ($S_c$) → Clinical (C) | 0–0.1 |
+| $\kappa_3$ | Transition rate from Chronic-Carrier ($C_c$) → Clinical (C) | 0–0.01 |
+| $\kappa_4$ | Transition from Chronic-Carrier ($C_c$) → Sub-Clinical ($S_c$) | 0–0.01 |
+| $\theta_1$ | Exposed pigs → Clinical (C) (Fraction) | 0.8 |
+| $\theta_2$ | Exposed pigs → Sub-Clinical ($S_c$) (Fraction) | 0.15 |
+| $\theta_3$ | Exposed pigs → Chronic-Carrier ($C_c$) (Fraction) | 0.05 |
+| $\nu$ | Daily detection rate of Infected (Passive) | 0.01 |
+| $P_{dh1}$ | Detection rate for 10% mortality (Clinical C) | 0.95 |
+| $P_{dh2}$ | Detection rate for 10% mortality (Sub-Clinical $S_c$) | 0.75 |
+| $P_{dh3}$ | Detection rate for 10% mortality (Chronic-Carrier $C_c$) | 0.5 |
+| $P_{dl}$ | Detection rate for low mortality | 0.01 |
+| $T_{sen}$ | Test sensitivity (Fraction) | 0.9 |
+| $P_{ij}$ | Pig transfer probability per day | 0.05 |
+| $\eta_1$ | Fraction of fecal shed within pen | 0.9 |
+| $\eta_2$ | Fraction of fecal shed between pens | 0.1 |
+| $\xi_1$ | Fraction of fecal ingested within pen | 0.9 |
+| $\xi_2$ | Fraction of fecal ingested between pens | 0.1 |
+
 
 '''
 # Feral ↔ Barn coupling params 
