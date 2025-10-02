@@ -1,4 +1,4 @@
-# ASFV_Feral_Domesticated_Spread
+# ASFV domestic and wild pig spread model
 
 **We model ASFV spread as a **layered system** that couples **within-farm infection dynamics** with **between-farm spatial dissemination**. Viral transmission occurs not only through **direct pig contact**, but also via **environmental contamination, vehicle-mediated transfer, and feral pig movement across the landscape**. By embedding barn-level epidemiological processes within a **spatial grid**, we capture how **local outbreaks escalate into broader regional spread**, enabling the identification of **high-risk transmission corridors** and evaluation of **targeted biosecurity strategies**.**
 
@@ -32,7 +32,7 @@ kappa_4=0.25 #Between pixel transmission
 zeta_1 = 0.9
 
 '''
-# --- Feral ↔ Barn coupling params ---
+# Feral ↔ Barn coupling params 
 beta_fp = 0.0015     # feral → farm pigs (via pixel env) per day per load unit
 beta_pf = 0.1     # farm/barn → feral (via pixel env) per day per load unit
 kappa_fp = 0.5     # reachability of pixel viral load to farm pigs
