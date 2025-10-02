@@ -92,7 +92,7 @@ We present a schematic about the multiple routes for ASFV spread.
 Lowest unit in the hierarchy:
 
 > **Pixel → Room → Barn → Pen**
-<img width="8315" height="13984" alt="SpatialSchematic" src="https://github.com/user-attachments/assets/1bf877a6-03e8-4cd0-937c-c055919a93be" />
+<img width="5837" height="6613" alt="SpatialSchematic" src="https://github.com/user-attachments/assets/03c00d73-10c5-4c0a-b31b-d81e3e9d650d" />
 
 Features:
 
