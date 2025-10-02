@@ -249,7 +249,12 @@ In addition to airborne and wildlife-driven spread, the model includes **vehicle
   - **Farm infection status at the time of visit**
   - **Natural decay**
 
-<img width="1544" height="2024" alt="TruckNetwork" src="https://github.com/user-attachments/assets/100ca14d-73ef-42f8-8629-008a430988a2" />
+<p align="center">
+  <img width="600" alt="TruckNetwork" src="https://github.com/user-attachments/assets/100ca14d-73ef-42f8-8629-008a430988a2" />
+</p>
+
+**Figure Y.** Schematic representation of the truck-mediated transmission pathway. Viral particles from **infected farms** contaminate truck surfaces and floors, which act as fomites during farm-to-farm movements. Upon visiting a **susceptible farm**, the contaminated truck deposits surviving viral particles, determined by the environmental survival rate ($\delta$). The deposited viral load is then proportionally distributed across barns, rooms, and pens, with airflow and dust dispersion patterns (modeled via CFD matrices) influencing the allocation. This process determines the effective exposure ($Z_t$) and the force of infection ($\lambda_t = \beta_t \times Z_t$) within susceptible pens.
+
 
 ---
 
