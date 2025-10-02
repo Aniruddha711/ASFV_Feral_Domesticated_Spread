@@ -52,16 +52,19 @@
 
 
 '''
-# Feral ↔ Barn coupling params 
-beta_fp = 0.0015     # feral → farm pigs (via pixel env) per day per load unit
-beta_pf = 0.1     # farm/barn → feral (via pixel env) per day per load unit
-kappa_fp = 0.5     # reachability of pixel viral load to farm pigs
-kappa_pf = 0.5     # reachability to feral pigs
-K_V = 1e3          # scaling for viral load
+## Feral ↔ Barn Coupling Parameters
 
-eta_f = 0.8        # fraction of feral shedding that enters pixel environment
-Q_f_shed = 1e3     # feral infected shedding per day (same units as your env load)
-epsilon_pix = 0.15 # daily pixel-level decay/cleaning for env viral load
+| Parameter   | Meaning | Value |
+|-------------|---------|-------|
+| $\beta_{fp}$ | Transmission: feral → farm pigs (via pixel env) per day per load unit | 0.0015 |
+| $\beta_{pf}$ | Transmission: farm/barn → feral (via pixel env) per day per load unit | 0.1 |
+| $\kappa_{fp}$ | Reachability of pixel viral load to farm pigs | 0.5 |
+| $\kappa_{pf}$ | Reachability of pixel viral load to feral pigs | 0.5 |
+| $K_V$ | Scaling factor for viral load | $10^3$ |
+| $\eta_f$ | Fraction of feral shedding that enters pixel environment | 0.8 |
+| $Q_{f\_shed}$ | Feral infected shedding per day (same units as env load) | $10^3$ |
+| $\epsilon_{pix}$ | Daily pixel-level decay/cleaning of environmental viral load | 0.15 |
+
 
 # Feral progression (simple SEIR)
 We define a  schematic illustrating the transmission and population dynamics. This diagram outlines the progression of pigs through seven
