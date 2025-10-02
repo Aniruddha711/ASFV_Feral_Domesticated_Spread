@@ -118,9 +118,6 @@ We present a schematic about the multiple routes for ASFV spread.
 
 **Figure .** We illustrate the seven transmission routes: direct nose-to-nose contact within pens, within-pen fecal transmission, within-pen aerosol transmission, between-pen direct nose-to-nose contact, between-pen fecal transmission, between-pen airborne transmission, and human transmission.
 
-
-
-
 ## Class: `Pen`
 
 Lowest unit in the hierarchy:
@@ -142,8 +139,6 @@ At the **Barn Level**, transmission between barns is modeled. Once a barn become
 At the **Room Level**, within-barn dynamics are simulated, where viral particles can move between rooms of an infected barn. Shared ventilation or indirect contact pathways facilitate this route of transmission.  
 
 Finally, at the **Pen Level**, detailed within-room dynamics are modeled. ASFV transmission occurs through direct pig-to-pig contact, environmental contamination, and indirect routes such as aerosol dispersion and human-mediated contamination.
-
-
 
 Features:
 
