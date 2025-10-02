@@ -82,7 +82,8 @@ Grounded in **real U.S. farm data**—including barn capacity, pen configuration
 
 ---
 We present a schematic about the multiple routes for ASFV spread.
-<img width="6328" height="4700" alt="Complet7Routes" src="https://github.com/user-attachments/assets/82bf5036-97fc-4514-b8db-0527566bbd07" />
+
+<img width="12864" height="5772" alt="SchematicDetection" src="https://github.com/user-attachments/assets/ef5d9112-ef6f-4f25-8166-57120598e5c0" />
 
 
 ## Class: `Pen`
