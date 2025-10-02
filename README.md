@@ -85,8 +85,6 @@ $\theta = 1, 2, 3$ specifies the transitions of Exposed pigs to Clinical, Sub-Cl
 $\kappa$ describes the status changes of pigs within the Clinical, Sub-Clinical, and Carrier compartments.  
 $\delta$ is the detection rate of Infected pigs, encompassing those in the Clinical, Sub-Clinical, and Carrier compartments.
 
-sigma_EI = 1/4.0   # E→I per day (mean incubation ~4d)
-gamma_IR = 1/30.0   # I→R per day (mean infectious ~7d)
 '''
 ## Transmission Routes and Model Overview
 
@@ -129,7 +127,22 @@ Lowest unit in the hierarchy:
 
 > **Pixel → Room → Barn → Pen**
 
-<img width="3400" height="6613" alt="SpatialSchematic" src="https://github.com/user-attachments/assets/ce2c8d5e-a060-497b-82bc-644a2a0d71a4" />
+<p align="center">
+  <img width="800" alt="SpatialSchematic" src="https://github.com/user-attachments/assets/ce2c8d5e-a060-497b-82bc-644a2a0d71a4" />
+</p>
+
+**Figure .** Hierarchical framework illustrating multi-scale transmission dynamics of ASFV from the raster to the pen level. The model begins at the **Raster Level**, where the entire map of North Carolina is discretized into a grid-based raster structure. Each raster cell (grid) contains multiple swine farms and is subject to environmental contamination. Viral load is transmitted from one grid to its neighbors with spatial decay. Feral pig movement across the raster facilitates spatial dissemination of viral particles to adjacent grids, further amplifying environmental contamination.  
+
+At the **Pixel Level**, within-grid dynamics are captured, wherein farms within the same raster cell may exchange viral load, especially if infected farms act as localized sources of transmission to neighboring susceptible farms.  
+
+At the **Farm Level**, the model tracks viral load generated at each individual farm. An infected farm can house one or more barns, and viral transmission can occur from infected barns to susceptible barns within the same farm boundary.  
+
+At the **Barn Level**, transmission between barns is modeled. Once a barn becomes infected, it can act as a reservoir of viral load that may be transmitted to other barns through shared resources or environmental contamination.  
+
+At the **Room Level**, within-barn dynamics are simulated, where viral particles can move between rooms of an infected barn. Shared ventilation or indirect contact pathways facilitate this route of transmission.  
+
+Finally, at the **Pen Level**, detailed within-room dynamics are modeled. ASFV transmission occurs through direct pig-to-pig contact, environmental contamination, and indirect routes such as aerosol dispersion and human-mediated contamination.
+
 
 
 Features:
