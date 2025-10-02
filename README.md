@@ -74,7 +74,16 @@ i = 1, 2, ..., 7 defines the various pathways to exposure. θ = 1, 2, 3, specifi
 (S c), or Chronic-Carrier (Cc) compartments after the latency period. κ describes the status changes of pigs within the Clinical (C), Sub-Clinical
 (S c), or Chronic-Carrier (Cc) compartments. δ is the detection rate of Infected pigs, encompassing those in the Clinical (C), Sub-Clinical (S c),
 or Chronic-Carrier (Cc) compartments. γ denotes the recovery rate for pigs in each compartment.
-<img width="4041" height="1717" alt="SchematicSIR" src="https://github.com/user-attachments/assets/79bf69b4-5bfb-4bbc-a1d3-cb428c516cf9" />
+<p align="center">
+  <img width="900" alt="SchematicSIR" src="https://github.com/user-attachments/assets/79bf69b4-5bfb-4bbc-a1d3-cb428c516cf9" />
+</p>
+
+**Figure .** Schematic illustrating the transition of pigs to different compartments: Susceptible (S), Exposed (E), Clinical (C), Sub-Clinical (S<sub>c</sub>), Carrier (C<sub>c</sub>), and Detected (D).  
+$\lambda_i$ represents the force of infection, indicating the rate at which pigs transition from the Susceptible to the Exposed compartment.  
+$i = 1, 2, \ldots, 7$ defines the various pathways through which exposure can occur.  
+$\theta = 1, 2, 3$ specifies the transitions of Exposed pigs to Clinical, Sub-Clinical, or Chronic-Carrier compartments after the latency period.  
+$\kappa$ describes the status changes of pigs within the Clinical, Sub-Clinical, and Carrier compartments.  
+$\delta$ is the detection rate of Infected pigs, encompassing those in the Clinical, Sub-Clinical, and Carrier compartments.
 
 sigma_EI = 1/4.0   # E→I per day (mean incubation ~4d)
 gamma_IR = 1/30.0   # I→R per day (mean infectious ~7d)
@@ -109,7 +118,7 @@ We present a schematic about the multiple routes for ASFV spread.
   <img width="800" alt="CompleteRoutes" src="https://github.com/user-attachments/assets/598d67f8-0d8e-445c-bdd1-276669cfd075" />
 </p>
 
-**Figure X.** We illustrate the seven transmission routes: direct nose-to-nose contact within pens, within-pen fecal transmission, within-pen aerosol transmission, between-pen direct nose-to-nose contact, between-pen fecal transmission, between-pen airborne transmission, and human transmission.
+**Figure .** We illustrate the seven transmission routes: direct nose-to-nose contact within pens, within-pen fecal transmission, within-pen aerosol transmission, between-pen direct nose-to-nose contact, between-pen fecal transmission, between-pen airborne transmission, and human transmission.
 
 
 
