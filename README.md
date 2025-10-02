@@ -92,6 +92,7 @@ Lowest unit in the hierarchy:
 
 > **Pixel → Room → Barn → Pen**
 <img width="8315" height="13984" alt="SpatialSchematic" src="https://github.com/user-attachments/assets/1bf877a6-03e8-4cd0-937c-c055919a93be" />
+<img width="2756" height="1728" alt="CompleteRoutes" src="https://github.com/user-attachments/assets/2e73d79b-dacd-431c-bb00-6ab9a1ec8cd6" />
 
 Features:
 
