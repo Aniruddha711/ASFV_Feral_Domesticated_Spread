@@ -44,6 +44,15 @@ Q_f_shed = 1e3     # feral infected shedding per day (same units as your env loa
 epsilon_pix = 0.15 # daily pixel-level decay/cleaning for env viral load
 
 # Feral progression (simple SEIR)
+We define a  schematic illustrating the transmission and population dynamics. This diagram outlines the progression of pigs through seven
+compartments: Susceptible (S ), Exposed (E), Clinical (C), Sub-Clinical (S c), Chronic-Carrier (Cc), Detected (D), and Recovered (R). λi
+represents the force of infection, indicating the rate at which pigs transition from the Susceptible (S ) to the Exposed (E) compartment.
+i = 1, 2, ..., 7 defines the various pathways to exposure. θ = 1, 2, 3, specifies the transitions of Exposed pigs (E) to Clinical (C), Sub-Clinical
+(S c), or Chronic-Carrier (Cc) compartments after the latency period. κ describes the status changes of pigs within the Clinical (C), Sub-Clinical
+(S c), or Chronic-Carrier (Cc) compartments. δ is the detection rate of Infected pigs, encompassing those in the Clinical (C), Sub-Clinical (S c),
+or Chronic-Carrier (Cc) compartments. γ denotes the recovery rate for pigs in each compartment.
+<img width="4041" height="1717" alt="SchematicSIR" src="https://github.com/user-attachments/assets/79bf69b4-5bfb-4bbc-a1d3-cb428c516cf9" />
+
 sigma_EI = 1/4.0   # E→I per day (mean incubation ~4d)
 gamma_IR = 1/30.0   # I→R per day (mean infectious ~7d)
 '''
